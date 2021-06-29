@@ -1,0 +1,52 @@
+.each-item{
+    cursor: pointer;
+    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+
+.each-item .img-wrapper img{
+    background: rgb(255, 255,255) none repeat scroll 0% 0%;
+    object-fit: scale-down;
+    width: 100%;
+    display: block;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-wrapper .brand-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.content-wrapper .brand-desc {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.content-wrapper .b-d-price {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.content-wrapper .b-price {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-left: 5px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.content-wrapper .b-discount {
+    color: red;
+    opacity: 0.5;
+    font-size: 12px;
+    margin-left: 5px;
+    font-weight: 400;
+}
