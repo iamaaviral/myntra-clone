@@ -10,11 +10,17 @@ header {
   position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 4%;
     z-index: 2;
     transition: background-image .4s;
     height: 70px;
     background: rgb(20, 20, 20);
+}
+
+header .right-header {
+  display: flex;
+  align-items: center;
 }
 
 header img {
