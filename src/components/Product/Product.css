@@ -3,13 +3,25 @@
     box-shadow: 0 2px 2px 2px rgba(0,0,0,0.3);
 }
 
-
 .each-item .img-wrapper img{
     background: rgb(255, 255,255) none repeat scroll 0% 0%;
     object-fit: scale-down;
     width: 100%;
     display: block;
 }
+
+.each-item .img-wrapper {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .each-item .img-wrapper img {
+    transition: transform 1s ease;
+  }
+
+  .each-item .img-wrapper:hover img {
+    transform: scale(1.3);
+  }
 
 .content-wrapper {
     display: flex;
