@@ -1,11 +1,11 @@
 import './Cart.css';
 import cart from '../../images/carts.png'
 
-function Cart() {
+function Cart(props) {
     return (
         <div className="cart-wrapper">
             <img src={cart} alt="cart-img" />
-            <span>0</span>
+            <span>{props.cartValue.length}</span>
         </div>
     );
 }
