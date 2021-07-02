@@ -6,20 +6,20 @@ const LoginForm = () => {
     return (
         <form>
             <div className="input_group">
-                <label className="input_label"><span className="label_text">Name</span></label>
-                <input className="input" />
+                <label className="input_label red_star"><span className="label_text">Name</span></label>
+                <input className="input" required />
             </div>
             <div className="input_group">
-                <label className="input_label"><span className="label_text">Email</span></label>
-                <input className="input" />
+                <label className="input_label red_star"><span className="label_text">Email</span></label>
+                <input className="input" required type="email" />
             </div>
             <div className="input_group">
-                <label className="input_label"><span className="label_text">Password</span></label>
-                <input className="input" />
+                <label className="input_label red_star"><span className="label_text">Password</span></label>
+                <input className="input" type="password" required />
             </div>
             <div className="input_group">
-                <label className="input_label"><span className="label_text">Re eneter your password</span></label>
-                <input className="input" />
+                <label className="input_label red_star"><span className="label_text">Re eneter your password</span></label>
+                <input className="input" type="password" required />
             </div>
             <div className="input_group">
                 <label className="input_label"><span className="label_text">State</span></label>

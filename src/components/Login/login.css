@@ -108,3 +108,8 @@
     white-space: nowrap;
 }
 
+label.red_star span::after {
+    content: '*';
+    color: red;
+    margin-left: 3px;
+}
