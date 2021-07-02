@@ -113,3 +113,7 @@ label.red_star span::after {
     color: red;
     margin-left: 3px;
 }
+.err {
+    color: red;
+    font-size: 11px;
+}
