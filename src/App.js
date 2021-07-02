@@ -9,24 +9,29 @@ import Login from './components/Login/Login'
 function App() {
 
   const [cartValue, setcartValue] = React.useState([])
+  const [userData, setUserData] = React.useState(null)
 
   let addToCart = (selectedProduct) => {
     setcartValue([...cartValue, selectedProduct])
   }
 
+  function changeUserData(data) {
+    setUserData(data)
+  }
+
   return (
     <div className="App">
-      {/* <header>
+      {userData ? <><header>
         <img src={logo} alt="img" />
         <div className="right-header">
           <Offer />
           <Cart cartValue={cartValue} />
         </div>
       </header>
-      <div className="body-container">
-        <List addToCart={addToCart} cartValue={cartValue} />
-      </div> */}
-      <Login />
+        <div className="body-container">
+          <List addToCart={addToCart} cartValue={cartValue} />
+        </div></> : <Login changeUserData={changeUserData} />}
+
     </div>
   );
 }

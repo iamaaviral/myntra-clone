@@ -3,15 +3,16 @@ import './Product.css';
 
 const Product = (props) => {
     const { item } = props
+    let [added, setadded] = React.useState(false)
 
     let addItemToCart = () => {
+        setadded(true)
         var __FOUND = props.cartValue.find(ele => {
             if (ele.productId == item.productId)
                 return true;
         });
 
         if (__FOUND) {
-            alert('item already added in cart')
             return
         } else {
             props.addToCart(item)
@@ -31,7 +32,11 @@ const Product = (props) => {
                     {item.discountDisplayLabel ? <span className="b-price">Rs. {item.mrp}</span> : null}
                     <span className="b-discount">{item.discountDisplayLabel}</span>
                 </h5>
-                <button className="add-to-cart-btn" onClick={addItemToCart}>Add to Cart</button>
+                <button
+                    className={`add-to-cart-btn ${added ? 'disabled' : ''}`}
+                    onClick={addItemToCart}
+                    disabled={added}
+                >Add to Cart</button>
             </div>
         </div>
     )

@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css'
 
 
-const LoginForm = () => {
-    // let [name, setName] = React.useState('')
-    // let [email, setEmail] = React.useState('')
+const LoginForm = (props) => {
+
+    // let [name, setname] = useState('')
+    // let [email, setemail] = useState('')
     // let [pass, setPass] = React.useState('')
     // let [npass, setnpass] = React.useState('')
     // let [state, setState] = React.useState('')
 
-    let [value, setvalue] = React.useState({
+    // let changeName = (e) => {
+    //     setname(e.target.value)
+    // }
+
+    // let changeEmail = (e) => {
+    //     setemail(e.target.value)
+    // }
+
+    // let changePass = (e) => {
+    //     setPass(e.target.value)
+    // }
+
+    // let changenPass = (e) => {
+    //     setnpass(e.target.value)
+    // }
+
+    // let changeState = (e) => {
+    //     setState(e.target.value)
+    // }
+
+
+    let [value, setValue] = useState({
         name: '',
         email: '',
         pass: '',
@@ -17,49 +39,37 @@ const LoginForm = () => {
         state: ''
     })
 
-    let [err, seterr] = React.useState(false)
+    let [err, seterr] = useState(false)
     let [errtxt, seterrtxt] = React.useState('')
 
-
-    // let changeName = (e) => {
-    //     setName(e.target.value)
-    // }
-
-    // let changeEmail = (e) => {
-    //     setEmail(e.target.value)
-    // }
-    // let changePass = (e) => {
-    //     setPass(e.target.value)
-    // }
-    // let changenPass = (e) => {
-    //     setnpass(e.target.value)
-    // }
-    // let changeState = (e) => {
-    //     setState(e.target.value)
-    // }
-
     let handleInputChange = (e) => {
-        seterr(false)
-        console.log(e.target.name)
-        setvalue({
+        setValue({
             ...value,
             [e.target.name]: e.target.value
         })
     }
 
+    React.useEffect(() => {
+        return () => {
+            // Anything in here is fired on component unmount.
+            console.log('Component Unmounted')
+        }
+    }, [])
+
     let handleSubmit = (e) => {
         e.preventDefault();
         if (!value.name || !value.email || !value.pass || !value.npass) {
+            seterr(true)
             seterrtxt('Some fields are missing')
+        } else if (value.name.length < 2) {
             seterr(true)
-        } else if (value.name.length < 3) {
-            seterrtxt('Name length is not enough')
-            seterr(true)
+            seterrtxt('Name is too small')
         } else if (value.pass !== value.npass) {
-            seterrtxt('Passowrds value do not matc')
             seterr(true)
+            seterrtxt('Passwords do not match')
         } else {
-            console.log('form submitted')
+            seterr(false)
+            props.changeUserData(value)
         }
     }
 
@@ -67,23 +77,23 @@ const LoginForm = () => {
         <form>
             <div className="input_group">
                 <label className="input_label red_star"><span className="label_text">Name</span></label>
-                <input className="input" required onChange={handleInputChange} value={value.name} name="name" />
+                <input className="input" name="name" required value={value.name} onChange={handleInputChange} />
             </div>
             <div className="input_group">
                 <label className="input_label red_star"><span className="label_text">Email</span></label>
-                <input className="input" required type="email" onChange={handleInputChange} value={value.email} name="email" />
+                <input className="input" name="email" required type="email" value={value.email} onChange={handleInputChange} />
             </div>
             <div className="input_group">
                 <label className="input_label red_star"><span className="label_text">Password</span></label>
-                <input className="input" type="password" required onChange={handleInputChange} value={value.pass} name="pass" />
+                <input className="input" name="pass" type="password" required value={value.pass} onChange={handleInputChange} />
             </div>
             <div className="input_group">
                 <label className="input_label red_star"><span className="label_text">Re eneter your password</span></label>
-                <input className="input" type="password" required onChange={handleInputChange} value={value.npass} name="npass" />
+                <input className="input" name="npass" type="password" required value={value.npass} onChange={handleInputChange} />
             </div>
             <div className="input_group">
                 <label className="input_label"><span className="label_text">State</span></label>
-                <select name="state" value={value.state} onChange={handleInputChange}>
+                <select value={value.state} name="state" onChange={handleInputChange}>
                     <option value="Assam">Assam</option>
                     <option value="Bihar">Bihar</option>
                     <option value="Goa">Goa</option>
@@ -97,18 +107,7 @@ const LoginForm = () => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-const Login = () => {
+const Login = (props) => {
     return (
         <div className="login-wrapper">
             <div className="login-form">
@@ -117,7 +116,7 @@ const Login = () => {
                 </div>
                 {/* FORM ELEMENT STARTS HERE */}
                 <div className="form-container">
-                    <LoginForm />
+                    <LoginForm changeUserData={props.changeUserData} />
                 </div>
             </div>
         </div>
