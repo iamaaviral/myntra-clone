@@ -1,0 +1,110 @@
+.login-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to bottom right,#feedf6,#fcf0e2)
+}
+
+.login-wrapper .login-form {
+    min-width:30%;
+    margin: 0 auto;
+    background-color:#fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-img  {
+    flex-basis: 30%;
+}
+.banner-img img {
+    width: 100%
+}
+
+.login-wrapper .login-form .form-container{
+    padding: 10px;
+    height: 100%;
+    background: #f0f4f5;
+}
+
+.login-wrapper .login-form .form-container .input_group{
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 70px;
+    margin-bottom: 20px;
+}
+
+.login-wrapper .login-form .form-container .input_group .input_label{
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 10;
+    cursor: text;
+    padding: 0 0 0 15px;
+    height: 46px;
+}
+
+.login-wrapper .login-form .form-container .input_group .input_label .label_text{
+    color: black;
+    letter-spacing: .7px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.input_group input.input, select {
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    display: block;
+    position: relative;
+    box-shadow: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.7s ease-in-out;
+    z-index: 1;
+    border: none;
+    outline: none;
+    padding: 18px 15px 0 15px;
+    margin: 0 auto 13px auto;
+    color: #363b4a;
+    letter-spacing: .7px;
+    font-weight: 300;
+    font-size: 16px;
+    height: 70px;
+    padding-top: 30px;
+}
+
+.button.button_wide {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 20px 0 0 0;
+    height: 50px;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: inline-block;
+    position: relative;
+    border: none;
+    border-radius: 3px;
+    background: #545a6a;
+    color: #ffffff;
+    font: normal normal 200 13px/40px 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    height: 40px;
+    padding: 0px 15px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    cursor: pointer;
+    white-space: nowrap;
+}
+

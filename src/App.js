@@ -4,6 +4,7 @@ import List from './components/List/List'
 import Offer from './components/Offer/Offer'
 import Cart from './components/Cart/Cart'
 import logo from './images/myntra-logo.png'
+import Login from './components/Login/Login'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      {/* <header>
         <img src={logo} alt="img" />
         <div className="right-header">
           <Offer />
@@ -24,7 +25,8 @@ function App() {
       </header>
       <div className="body-container">
         <List addToCart={addToCart} cartValue={cartValue} />
-      </div>
+      </div> */}
+      <Login />
     </div>
   );
 }
