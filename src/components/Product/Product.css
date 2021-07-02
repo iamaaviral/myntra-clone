@@ -76,3 +76,10 @@
     margin: 0 auto;
     margin-bottom: 15px;
 }
+
+.content-wrapper .add-to-cart-btn.disabled {
+    pointer-events: none;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    cursor: none;
+}
