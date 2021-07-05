@@ -1,13 +1,15 @@
 import React from 'react';
 import './Product.css';
+import { CartContext } from '../../cartContext';
 
 const Product = (props) => {
+    let value = React.useContext(CartContext)
     const { item } = props
     let [added, setadded] = React.useState(false)
 
     let addItemToCart = () => {
         setadded(true)
-        var __FOUND = props.cartValue.find(ele => {
+        var __FOUND = value.cartValue.find(ele => {
             if (ele.productId == item.productId)
                 return true;
         });
@@ -15,7 +17,7 @@ const Product = (props) => {
         if (__FOUND) {
             return
         } else {
-            props.addToCart(item)
+            value.addToCart(item)
         }
     }
 

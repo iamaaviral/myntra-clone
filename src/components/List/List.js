@@ -17,7 +17,7 @@ const List = (props) => {
         <div className="each-item-wrapper">
             {
                 data ? data.products.map((eachItem, i) => {
-                    return <Product item={eachItem} key={i} cartValue={props.cartValue} addToCart={props.addToCart} />
+                    return <Product item={eachItem} key={i} />
                 }) : <h1>Loading......</h1>
             }
         </div>

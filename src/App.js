@@ -8,12 +8,8 @@ import Login from './components/Login/Login'
 
 function App() {
 
-  const [cartValue, setcartValue] = React.useState([])
   const [userData, setUserData] = React.useState(localStorage.getItem('user') || null)
 
-  let addToCart = (selectedProduct) => {
-    setcartValue([...cartValue, selectedProduct])
-  }
 
   function changeUserData(data) {
     setUserData(data)
@@ -30,12 +26,12 @@ function App() {
         <img src={logo} alt="img" />
         <div className="right-header">
           <Offer />
-          <Cart cartValue={cartValue} />
+          <Cart />
           <a className="logout-linkButton" onClick={handleLogout}>Logout</a>
         </div>
       </header>
         <div className="body-container">
-          <List addToCart={addToCart} cartValue={cartValue} />
+          <List />
         </div></> : <Login changeUserData={changeUserData} />}
 
     </div>
