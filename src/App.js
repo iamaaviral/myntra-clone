@@ -27,6 +27,10 @@ function App() {
         <div className="right-header">
           <Offer />
           <Cart />
+          <label class="switch">
+            <input type="checkbox" onchange="toggleTheme()" />
+            <span class="slider round"></span>
+          </label>
           <a className="logout-linkButton" onClick={handleLogout}>Logout</a>
         </div>
       </header>
