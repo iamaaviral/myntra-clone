@@ -9,7 +9,7 @@ import Login from './components/Login/Login'
 function App() {
 
   const [cartValue, setcartValue] = React.useState([])
-  const [userData, setUserData] = React.useState(null)
+  const [userData, setUserData] = React.useState(localStorage.getItem('user') || null)
 
   let addToCart = (selectedProduct) => {
     setcartValue([...cartValue, selectedProduct])
@@ -19,6 +19,11 @@ function App() {
     setUserData(data)
   }
 
+  let handleLogout = () => {
+    localStorage.removeItem('user')
+    setUserData(null)
+  }
+
   return (
     <div className="App">
       {userData ? <><header>
@@ -26,6 +31,7 @@ function App() {
         <div className="right-header">
           <Offer />
           <Cart cartValue={cartValue} />
+          <a className="logout-linkButton" onClick={handleLogout}>Logout</a>
         </div>
       </header>
         <div className="body-container">

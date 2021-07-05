@@ -27,6 +27,24 @@ header img {
   height: 24px;
 }
 
+header a.logout-linkButton {
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 14px;
+    border: 1px solid #eaeaec;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ff3f6c;
+    font-weight: 500;
+    margin: 0 5px 6px 8px;
+}
+
+header a.logout-linkButton:hover {
+  border: 1px solid #ff3f6c;
+}
+
 .body-container {
   padding: 18px;
   background: rgba(20, 20, 20, 0.9);

@@ -69,6 +69,7 @@ const LoginForm = (props) => {
             seterrtxt('Passwords do not match')
         } else {
             seterr(false)
+            localStorage.setItem('user', JSON.stringify(value))
             props.changeUserData(value)
         }
     }
