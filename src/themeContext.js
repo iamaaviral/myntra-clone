@@ -1,14 +1,19 @@
 import React from 'react'
 
-//whenever we want to use the information in provider
 export const ThemeContext = React.createContext()
 
-
-//This component provides me the state
 export const ThemeProvider = (props) => {
+    const [theme, setTheme] = React.useState('dark')
+
+    let toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light')
+    }
 
     return (
-        <ThemeContext.Provider value={ }>
+        <ThemeContext.Provider value={{
+            theme,
+            toggleTheme
+        }}>
             {props.children}
         </ThemeContext.Provider>
     )

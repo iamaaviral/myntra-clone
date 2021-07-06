@@ -1,4 +1,4 @@
 .offer-wrapper {
-    color: white;
+    color: var(--font-color);
     margin-right: 15px;
 }
