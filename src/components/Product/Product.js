@@ -10,7 +10,7 @@ const Product = (props) => {
     let addItemToCart = () => {
         setadded(true)
         var __FOUND = value.cartValue.find(ele => {
-            if (ele.productId == item.productId)
+            if (ele.productId === item.productId)
                 return true;
         });
 

@@ -29,11 +29,11 @@ function App() {
         <div className="right-header">
           <Offer />
           <Cart />
-          <label class="switch">
+          <label className="switch">
             <input type="checkbox" onChange={value.toggleTheme} />
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
-          <a className="logout-linkButton" onClick={handleLogout}>Logout</a>
+          <button href="" className="logout-linkButton" onClick={handleLogout}>Logout</button>
         </div>
       </header>
         <div className="body-container">

@@ -104,7 +104,7 @@ header img {
   height: 24px;
 }
 
-header a.logout-linkButton {
+header button.logout-linkButton {
     cursor: pointer;
     display: inline-block;
     padding: 12px 14px;
@@ -116,9 +116,10 @@ header a.logout-linkButton {
     color: #ff3f6c;
     font-weight: 500;
     margin: 0 5px 6px 8px;
+    background-color: transparent;
 }
 
-header a.logout-linkButton:hover {
+header button.logout-linkButton:hover {
   border: 1px solid #ff3f6c;
 }
 

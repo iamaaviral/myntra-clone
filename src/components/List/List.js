@@ -7,7 +7,6 @@ const List = (props) => {
     const [data, setData] = useState(null)
 
     React.useEffect(() => {
-        console.log('Component Did mount')
         fetch('https://demo7242716.mockable.io/products')
             .then(res => res.json())
             .then(data => setData(data))
