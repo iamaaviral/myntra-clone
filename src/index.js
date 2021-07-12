@@ -5,14 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './cartContext'
 import { ThemeProvider } from './themeContext'
+import ErrorBoundary from './ErrorBoundary'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );
