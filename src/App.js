@@ -5,7 +5,7 @@ import Offer from './components/Offer/Offer'
 import Cart from './components/Cart/Cart'
 import logo from './images/myntra-logo.png'
 import Login from './components/Login/Login'
-import { ThemeContext } from './themeContext'
+import { ThemeContext } from './context/themeContext'
 
 function App() {
 

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CartProvider } from './cartContext'
-import { ThemeProvider } from './themeContext'
+import { CartProvider } from './context/cartContext'
+import { ThemeProvider } from './context/themeContext'
 import ErrorBoundary from './ErrorBoundary'
 
 ReactDOM.render(

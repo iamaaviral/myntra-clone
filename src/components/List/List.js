@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Product from '../Product/Product'
 import './List.css'
+import Loader from '../../containers/Loader';
 
 const List = (props) => {
 
@@ -17,7 +18,7 @@ const List = (props) => {
             {
                 data ? data.products.map((eachItem, i) => {
                     return <Product item={eachItem} key={i} />
-                }) : <h1>Loading......</h1>
+                }) : <Loader />
             }
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Cart.css';
 import cart from '../../images/carts.png'
-import { CartContext } from '../../cartContext';
+import { CartContext } from '../../context/cartContext';
 
 function Cart() {
     let value = React.useContext(CartContext)
