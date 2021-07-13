@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import withLoader from '../../withLoader';
 import Product from '../Product/Product'
 import './List.css'
-import Loader from '../../containers/Loader';
 
 const List = (props) => {
 
@@ -10,15 +10,18 @@ const List = (props) => {
     React.useEffect(() => {
         fetch('https://demo7242716.mockable.io/products')
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => {
+                setData(data)
+                props.setLoading(false)
+            })
     }, [])
 
     return (
         <div className="each-item-wrapper">
             {
-                data ? data.products.map((eachItem, i) => {
+                data && data.products.map((eachItem, i) => {
                     return <Product item={eachItem} key={i} />
-                }) : <Loader />
+                })
             }
         </div>
     )
@@ -66,4 +69,4 @@ const List = (props) => {
 //     }
 // }
 
-export default List;
+export default withLoader(List, 1);

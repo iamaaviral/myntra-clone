@@ -1,6 +1,7 @@
 import React from 'react';
 import './Product.css';
 import { CartContext } from '../../context/cartContext';
+import withLoader from '../../withLoader';
 
 const Product = (props) => {
     let value = React.useContext(CartContext)
@@ -20,6 +21,10 @@ const Product = (props) => {
             value.addToCart(item)
         }
     }
+
+    React.useEffect(() => {
+        props.setLoading(false)
+    }, [])
 
     return (
         <div className="each-item">
@@ -83,4 +88,4 @@ const Product = (props) => {
 
 // }
 
-export default Product;
+export default withLoader(Product);
