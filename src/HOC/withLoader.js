@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from './containers/Loader'
+import Loader from '../containers/Loader'
 
 const withLoader = (WrappedComponent, pageName) => {
 

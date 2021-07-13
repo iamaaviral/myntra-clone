@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import withLoader from '../../withLoader';
+import withLoader from '../../HOC/withLoader';
 import Product from '../Product/Product'
 import './List.css'
 
@@ -69,4 +69,4 @@ const List = (props) => {
 //     }
 // }
 
-export default withLoader(List, 1);
+export default withLoader(List, 'Product list');

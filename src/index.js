@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './context/cartContext'
 import { ThemeProvider } from './context/themeContext'
-import ErrorBoundary from './ErrorBoundary'
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 
 ReactDOM.render(
   <React.StrictMode>

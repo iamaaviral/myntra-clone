@@ -1,7 +1,7 @@
 import React from 'react';
 import './Product.css';
 import { CartContext } from '../../context/cartContext';
-import withLoader from '../../withLoader';
+import withLoader from '../../HOC/withLoader';
 
 const Product = (props) => {
     let value = React.useContext(CartContext)
@@ -88,4 +88,4 @@ const Product = (props) => {
 
 // }
 
-export default withLoader(Product);
+export default withLoader(Product, 'Your Product');
